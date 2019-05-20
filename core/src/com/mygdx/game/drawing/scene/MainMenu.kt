@@ -15,8 +15,15 @@ class MainMenu(assets: AssetManager) : Drawing {
         )
     }
 
+    private val block = lazy {
+        Sprite(
+            assets.loaded("block.png", Texture::class.java)
+        )
+    }
+
     override fun drawOn(batch: Batch) {
         background.value.setSize(Gdx.graphics.width.toFloat(), Gdx.graphics.height.toFloat())
         background.value.draw(batch)
+        block.value.draw(batch)
     }
 }
